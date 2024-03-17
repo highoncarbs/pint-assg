@@ -29,7 +29,8 @@ Query Parameters:
 - publish_date (str): Filter articles by publish date (optional).
 - publisher (str): Filter articles by publisher (optional).
 
-Example Usage:
+#### Example Usage
+
 To retrieve articles with any parameters
 ```bash
 curl "localhost:5000/articles?title=example_title&publish_date=yyyy-mm-dd&limit=10&publisher=example_publisher&url=example_url"
@@ -49,7 +50,7 @@ To use this API, make a GET request to the `/summary` endpoint with the followin
 - `publisher`: (Optional) A string representing the publisher to filter articles by.
 - `limit`: (Optional) An integer representing the maximum number of articles to retrieve. The default is 10.
 
-Example:
+#### Example
 
 ```bash
 curl "localhost:5000/summary?hour=yyyy-mm-dd HH:00:00&publisher=nytimes&limit=5"
