@@ -32,7 +32,7 @@ Query Parameters:
 Example Usage:
 To retrieve articles with any parameters
 ```bash
-curl "localhost:5000/articles?title=example_title&publish_date=yyyy-mm-dd&limit=<>&publisher=example_publisher&url=example_url"
+curl "localhost:5000/articles?title=example_title&publish_date=yyyy-mm-dd&limit=10&publisher=example_publisher&url=example_url"
 ```
 
 To retrieve articles with simple parameters
