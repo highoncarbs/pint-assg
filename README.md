@@ -15,6 +15,8 @@ For Unix or Linux:
 Install required packages
 `pip install -r requirement.txt`
 
+API will run on `localhost:5000` 
+
 ### Retrieve articles from the SQLite database based on specified filters.
 
 Returns:
@@ -29,31 +31,30 @@ Query Parameters:
 
 Example Usage:
 To retrieve articles with a specific title:
-GET /articles?title=example_title
+`GET` `/articles?title=example_title`
 
 To retrieve articles with a specific URL:
-GET /articles?url=example_url
+`GET` `/articles?url=example_url`
 
 To retrieve articles with a specific publisher:
-GET /articles?publisher=example_publisher
+`GET` `/articles?publisher=example_publisher`
 
 To retrieve articles published on a specific date:
-GET /articles?publish_date=yyyy-mm-dd
+`GET` `/articles?publish_date=yyyy-mm-dd`
 
 To retrieve a limited number of articles:
-GET /articles?limit=5
+`GET` `/articles?limit=5`
 
 
 ### Retrieves summary articles from the SQLite database based on the provided filters.
 
-Parameters:
-- hour (str): Optional. Filter articles by hour.
-- publisher (str): Optional. Filter articles by publisher.
-- limit (int): Optional. Limit the number of articles to retrieve. Default is 10.
+To use this API, make a GET request to the `/summary` endpoint with the following query parameters:
 
-Returns:
-- list: A list of dictionaries representing the summary articles.
-    Each dictionary contains the following keys:
-    - hour (str): The hour of the article.
-    - publisher (str): The publisher of the article.
-    - count (int): The count of articles for the given hour and publisher.
+- `hour`: (Optional) A string representing the hour to filter articles by `yyyy-mm-dd HH:00:00`.
+- `publisher`: (Optional) A string representing the publisher to filter articles by.
+- `limit`: (Optional) An integer representing the maximum number of articles to retrieve. The default is 10.
+
+Example:
+
+```bash
+curl "http://example.com/articles?hour=yyyy-mm-dd HH:00:00&publisher=nytimes&limit=5"
