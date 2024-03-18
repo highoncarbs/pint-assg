@@ -108,20 +108,10 @@ def generate_summary_table():
         logger.error(e)
         pass
 
-if __name__ == "__main__":
-    fetch_data()
+# Schedule the fetch_data function to run every 30 minutes
+schedule.every(30).minutes.do(fetch_data)
     
-    # while True:
-#         schedule.every(2).seconds.do(fetch_data)
-# def schedule_fetch_data():
-#     # Schedule the fetch_data function to run every hour
-
-#     while True:
-#         # Run the pending scheduled tasks
-#         schedule.run_pending()
-#         time.sleep(1)
-
-# # Call the schedule_fetch_data function to start fetching data from the feed
-# schedule_fetch_data()
-
-
+while True:
+    # Run the pending scheduled tasks
+    schedule.run_pending()
+    time.sleep(1)
